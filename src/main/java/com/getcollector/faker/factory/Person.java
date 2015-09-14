@@ -3,7 +3,7 @@
  * on social media or just share some Collector love with the people that are near to you.
  */
 
-package com.getcollector.faker.types;
+package com.getcollector.faker.factory;
 
 import com.getcollector.faker.service.FakeData;
 
@@ -36,13 +36,13 @@ public class Person {
 
   public String getFullName() {
     String gender = this.getGender();
-    String first_name = this.fakeData.getString("person." + gender + ".first_name");
-    String last_name = this.fakeData.getString("person." + gender + ".last_name");
+    String first_name = this.fakeData.fetchString("person.first_name." + gender);
+    String last_name = this.fakeData.fetchString("person.last_name." + gender);
     return first_name + " " + last_name;
   }
 
   public String getFirstName() {
     String gender = this.getGender();
-    return this.fakeData.getString("person." + gender + ".first_name");
+    return this.fakeData.fetchString("person.first_name." + gender);
   }
 }

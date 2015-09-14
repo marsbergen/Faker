@@ -6,7 +6,7 @@
 package com.getcollector.faker;
 
 import com.getcollector.faker.service.FakeData;
-import com.getcollector.faker.types.Person;
+import com.getcollector.faker.factory.Person;
 
 import java.util.Locale;
 

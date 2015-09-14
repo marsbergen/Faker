@@ -1,19 +1,17 @@
 package com.getcollector.faker.service;
 
+import com.getcollector.faker.factory.Person;
 import junit.framework.TestCase;
-import org.junit.Test;
-
 import java.util.Locale;
-
-import static org.junit.Assert.*;
 
 public class FakeDataTest extends TestCase {
 
-  @Test
   public void testGetString() throws Exception {
     FakeData fakeData = new FakeData(Locale.ENGLISH);
 
-    String femaleFirstName = fakeData.getString("person.female.first_name");
+    Person person = new Person(fakeData);
+    person.setGender("female");
+    String femaleFirstName = person.getFirstName();
 
     System.out.println(femaleFirstName);
   }
